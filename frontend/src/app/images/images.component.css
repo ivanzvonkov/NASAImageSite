@@ -1,0 +1,44 @@
+#search{
+    margin-right:5px;
+}
+
+.image-container{
+    float:left;
+    width:  15rem;
+    height: 15rem;
+    margin-right:1em;
+    margin-bottom: 1em;
+    overflow: hidden;
+}
+
+.images {
+    
+    margin:auto;
+    border-style:solid;
+    border-color: white;
+    border-width: 5px;
+    
+    width:100%;
+    height:auto;
+    
+}
+
+.images:hover{
+    border-color:green;
+}
+
+.modal-image-container{
+    
+}
+
+.modal-image{
+    display: block;
+    margin: auto;
+    max-width:100%;
+    max-height: 25rem;
+}
+
+
+.modal-footer{
+    display:block;
+}

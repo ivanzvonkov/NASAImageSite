@@ -1,0 +1,92 @@
+<div class="fluid-container">
+    <div class="row">
+        <div class="col-md-2"></div>
+      
+        <div class="col-md-8">
+            
+            <h2>NASA Images</h2>  
+            
+            <div class="input-group">
+                <input id="search" type="text" class="form-control" placeholder="Search" aria-label="Search" (keyup)="onSearchKey($event)" [value]="searchValue">
+                <button (click) = "search()" class="btn btn-success">Search</button>
+            </div>
+            
+            <img *ngIf="loading" src="http://thinkfuture.com/wp-content/uploads/2013/10/loading_spinner.gif">
+            <br>
+            
+            
+            
+            <p *ngIf="noImages == true">No images found for :<strong> {{values}} </strong> </p>
+            
+            
+            <!-- each image-->
+            <div class="image-container"  *ngFor="let image of currentImagesOnPage">
+                <!-- "'modal'+image.data[0].nasa_id" -->
+                <div (click) = 'resetCollectionOptions()'  data-toggle="modal" [attr.data-target]="'#modal'+image.data[0].nasa_id">
+                    
+                    <img class="images rounded" src="{{image.links[0].href}}"/>
+                
+                </div>
+                
+                <!-- Modal -->
+                <div class="modal fade" id="modal{{image.data[0].nasa_id }}" tabindex="-1" role="dialog" aria-labelledby="labell" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">{{image.data[0].title}}</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        
+                        <div class="modal-image-container"><a href="{{image.links[0].href}}" target="_blank"><img class="modal-image rounded" src="{{image.links[0].href}}"/></a></div>
+                        
+                        <br>
+                        <br>
+                        {{image.data[0].description}}
+                        <br>
+                        <br>
+                        
+                        <div> 
+                          <button [disabled]="!this._s.loggedIn" class="btn btn-primary" type="button" data-toggle="collapse"  [attr.data-target]="'#collapse'+image.data[0].nasa_id" aria-expanded="false" aria-controls="collapseExample">
+                            Add to Collection
+                          </button>
+                        </div>   
+                          
+                      </div>
+                      <div class="modal-footer">
+                          
+                       
+                        <div class="collapse" id='collapse{{image.data[0].nasa_id}}'>
+                          <div class="card card-body">
+                           
+                            <div class="list-group" id="list-tab" role="tablist">
+                              <a *ngFor="let collection of collections" href="" (click) = 'selectCollection(collection)' class="list-group-item list-group-item-action" id="list-{{collection}}" data-toggle="list" role="tab">{{collection.title}}</a>
+                            </div>
+                            
+                            <br>
+                            
+                            <button id="save-to-collection" [disabled]="!saveIsValid()" (click) = "saveToCollection(image)" data-dismiss="modal" class="btn btn-success">Save to Collection</button>
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+            </div>
+            
+            <button [disabled] = "!previousPageAvailable" (click) = "previousPage()" class="btn btn-link">Previous Page</button>
+            <button [disabled] = "!nextPageAvailable" (click) = "nextPage()" class="btn btn-link">Next Page</button>
+            
+            <br>
+            <br>
+          
+        </div>
+      
+        <div class="col-md-2"></div>
+        
+    </div>
+  </div>

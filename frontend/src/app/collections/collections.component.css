@@ -1,0 +1,48 @@
+
+
+
+.card{
+    width:21rem;
+    display:inline-block;
+}
+
+.card-container{
+    float:left;
+    margin-right: 1em;
+    margin-bottom: 1em;
+}
+
+.card-image-container{
+    width:  100%;
+    height: 15rem;
+    overflow: hidden;
+}
+
+.image-container{
+    float:left;
+    width:  13rem;
+    height: 13rem;
+    margin:1em;
+    overflow: hidden;
+}
+
+.images {
+    
+    margin:auto;
+    border-style:solid;
+    border-color: white;
+    border-width: 5px;
+    
+    width:100%;
+    height:auto;
+    
+}
+
+.images:hover{
+    border-color:green;
+}
+
+.delete-image-button{
+    width:100%;
+    margin-bottom: 0.5em;
+}

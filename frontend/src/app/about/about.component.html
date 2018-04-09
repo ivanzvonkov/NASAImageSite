@@ -1,0 +1,36 @@
+
+<div class="fluid-container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      
+      <div class="col-md-8">
+        
+        <div class="jumbotron">
+          <h1 class="display-3">About</h1>
+          <p class="lead">
+            This is a simple website for browsing NASA images. The website is built with the MEAN stack. So Mongo is used
+            to store the database, Express and Nodejs are used on the back end and Angular which is hard to learn is in the 
+            front-end.
+          </p>
+          <hr class="my-4">
+          <div *ngIf="!loggedIn">
+            <p>Sign in for extra functionality</p>
+            <p class="lead">
+              <a class="btn btn-success btn-lg" routerLink='/sign-in' role="button">Sign In</a>
+            </p>
+          </div>
+          
+          <h3 *ngIf="loggedIn">You are logged in!</h3>
+        </div>
+        
+        
+      </div>
+      
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+
+
+
+    
+

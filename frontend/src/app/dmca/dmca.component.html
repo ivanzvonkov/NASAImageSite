@@ -1,0 +1,120 @@
+<div class="fluid-container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <div class="jumbotron"> 
+          
+          <div [innerHtml]="dmcaBody.text"></div>
+          
+            
+            <form name="dmcaForm" ngNativeValidate #d="ngForm" (ngSubmit)="dmcaForm(d)">
+                <div class="row contact-information">
+                 
+                  <div class="col-md-12">
+                    <!--Contact Info-->
+                    <div >
+                      <hr class="my-4">
+                      <h2>Your Contact Information</h2>
+                      <label>Name</label>
+                      <input type="text" name="name"class="form-control" ngModel required>
+                    
+                      <label>Email</label>
+                      <input type="email" name="email"class="form-control" ngModel required>
+                      
+                      <label>Phone Number</label>
+                      <input type="number" name="phone-number"class="form-control" ngModel required>
+                      
+                      <label>Address</label>
+                      <input type="text" name="address"class="form-control" ngModel required>
+                    </div> 
+                    
+                    <!--Original Info-->
+                    <div>
+                      <hr class="my-4">
+                      
+                      <h2>Identify Your Work</h2>
+                      <label>Original Image Link(s)</label>
+                      <small class="form-text text-muted">
+                          Please separate image links with commas. (Example: 
+                          <a target="_blank" href=" ">https://www.image1.com</a>, 
+                          <a target="_blank" href=" ">https://www.image2.com</a>)
+                      </small>
+                      <input type="text" name="original-image-link"class="form-control" ngModel required>
+                    </div>
+                    
+                    <!--Content to be reported -->
+                    <div>
+                      <hr class="my-4">
+                      
+                      <h2>Content you want to report</h2>
+                      <label>Collection Name</label>
+                      <input type="text" name="collection-name"class="form-control" ngModel required>
+                      
+                      <label>Image Link(s)</label>
+                      <small class="form-text text-muted">
+                          Please separate image links with commas. (Example: 
+                          <a target="_blank" href=" ">https://www.image1.com</a>, 
+                          <a target="_blank" href=" ">https://www.image2.com</a>)
+                      </small>
+                      <input type="text" name="image-link"class="form-control" ngModel required>
+                    </div>  
+                    
+                    <!-- Declarations -->
+                    <div>
+                      <hr class="my-4">
+                      <h2>Declarations</h2>
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input type="checkbox" class="form-check-input" required>
+                          I have a good faith belief that use of the material in the manner complained 
+                          of is not authorized by the copyright owner, its agent, or the law.
+                        </label>
+                        <label class="form-check-label">
+                          <input type="checkbox" class="form-check-input" required>
+                          I swear, under penalty of perjury, that the information in the notification 
+                          is accurate, and that I am the copyright owner or am authorized to act on behalf 
+                          of the owner of an exclusive right that is allegedly infringed.
+                        </label>
+                        <label class="form-check-label">
+                          <input type="checkbox" class="form-check-input" required>
+                          I acknowledge that a copy of this infringement notice, including any contact 
+                          information provided above, may be provided to the person that posted the 
+                          content being reported.
+                        </label>
+                      </div>
+                      
+                    </div>
+                    
+                    <!-- Electronic Signature -->
+                    <div>
+                      <hr class="my-4">
+                      
+                      <h2>Electronic Signature</h2>
+                      <label>Typing your name in the box below will act as your electronic signature.</label>
+                      <input type="text" name="electronic-signature"class="form-control" placeholder='Requester Signature' ngModel required>    
+                        
+                    </div>
+                    
+                      <br>
+                      <input [disabled]="loading" class="btn btn-success" type = "submit" value="Submit">
+                      <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+                        
+                    
+                  </div>
+                  
+                  
+                  
+                  
+                </div>
+                
+                
+                
+                
+            </form>
+        </div>    
+          
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+</div>
+      
