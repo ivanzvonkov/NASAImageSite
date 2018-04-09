@@ -1,7 +1,7 @@
 # Angular NASA Image Site
 
 ## What is it?
-Angular site using NASA Image api.
+MEAN Stack site using NASA Image api.
 - Search though NASA images 
 - View user created image collections
 - Create private and public image collections (when signed in)
@@ -17,5 +17,5 @@ Angular site using NASA Image api.
 #### Site should be live on http://localhost:8080/
 
 ## Screen Shots 
-![alt text]( "Images Screenshot")
-![alt text]( "Images Screenshot")
+![alt text](https://raw.githubusercontent.com/ivanzvonkov/NASAImageSite/master/screenshots/screenshot_images.png "Images Screenshot")
+![alt text](https://raw.githubusercontent.com/ivanzvonkov/NASAImageSite/master/screenshots/screenshot-collections.png "Images Screenshot")
