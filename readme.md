@@ -1,4 +1,4 @@
-# Angular NASA Image Site
+# NASA Image Site
 
 ## What is it?
 MEAN Stack site using NASA Image api.
