@@ -8,10 +8,10 @@ MEAN Stack site using NASA Image api.
 
 ## How to run?
 #### Start the Server
-- `$ ls NASAImageSite/backend`
+- `$ cd server`
 - `$ node server.js`
 #### Start Frontend
-- `$ ls NASAImageSite/frontend`
+- `$ cd frontend`
 - `$ npm start`
 
 #### Site should be live on http://localhost:8080/
